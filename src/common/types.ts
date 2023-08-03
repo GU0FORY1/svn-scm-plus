@@ -321,3 +321,8 @@ export interface LineChange {
   readonly modifiedStartLineNumber: number;
   readonly modifiedEndLineNumber: number;
 }
+
+export interface CommitType {
+  label: string;
+  detail: string;
+}

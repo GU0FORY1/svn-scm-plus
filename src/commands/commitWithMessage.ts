@@ -1,12 +1,14 @@
 import * as path from "path";
 import { window } from "vscode";
 import { inputCommitFiles } from "../changelistItems";
-import { Status } from "../common/types";
+import { Status, CommitType } from "../common/types";
 import { inputCommitMessage } from "../messages";
 import { Repository } from "../repository";
 import { Resource } from "../resource";
 import { Command } from "./command";
+import { configuration } from "../helpers/configuration";
 
+const types = configuration.get<CommitType[]>("commit.messageTypes");
 export class CommitWithMessage extends Command {
   constructor() {
     super("svn.commitWithMessage", { repository: true });
@@ -22,8 +24,12 @@ export class CommitWithMessage extends Command {
       return state.resourceUri.fsPath;
     });
 
+    const type = await window.showQuickPick(types, {
+      placeHolder: "Select type to commit",
+      canPickMany: false
+    });
     const message = await inputCommitMessage(
-      repository.inputBox.value,
+      `${type?.label}:${repository.inputBox.value}`,
       false,
       filePaths
     );

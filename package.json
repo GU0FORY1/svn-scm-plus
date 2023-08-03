@@ -1,22 +1,22 @@
 {
-    "name": "svn-scm",
-    "displayName": "SVN",
-    "description": "Integrated Subversion source control",
+    "name": "svn-scm-plus",
+    "displayName": "SVN+",
+    "description": "Integrated Subversion source control.Enhanced version based on the original SVN",
     "version": "2.17.0",
-    "publisher": "johnstoncode",
+    "publisher": " GU0FORY1",
     "engines": {
         "vscode": "^1.53.0"
     },
     "private": true,
     "enableProposedApi": false,
     "icon": "images/subversion.png",
-    "homepage": "https://github.com/JohnstonCode/svn-scm/blob/master/README.md",
+    "homepage": "https://github.com/GU0FORY1/svn-scm-plus/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/JohnstonCode/svn-scm.git"
+        "url": "https://github.com/GU0FORY1/svn-scm-plus.git"
     },
     "bugs": {
-        "url": "https://github.com/JohnstonCode/svn-scm/issues"
+        "url": "https://github.com/GU0FORY1/svn-scm-plus/issues"
     },
     "categories": [
         "Other",
@@ -1272,6 +1272,56 @@
                     "type": "boolean",
                     "description": "Set to ignore externals definitions on update (add --ignore-externals)",
                     "default": true
+                },
+                "svn.commit.messageTypes": {
+                    "type": "array",
+                    "description": "Commit message type",
+                    "default": [
+                        {
+                            "label": "feat",
+                            "detail": "新的功能特性"
+                        },
+                        {
+                            "label": "fix",
+                            "detail": "bug 修复"
+                        },
+                        {
+                            "label": "docs",
+                            "detail": "文档内容修改，新增"
+                        },
+                        {
+                            "label": "style",
+                            "detail": "代码格式，风格的改动"
+                        },
+                        {
+                            "label": "perf",
+                            "detail": "性能优化"
+                        },
+                        {
+                            "label": "refactor",
+                            "detail": "代码重构"
+                        },
+                        {
+                            "label": "test",
+                            "detail": "测试相关"
+                        },
+                        {
+                            "label": "chore",
+                            "detail": "构建过程或辅助工具的变动"
+                        },
+                        {
+                            "label": "revert",
+                            "detail": "回退"
+                        },
+                        {
+                            "label": "build",
+                            "detail": "打包"
+                        },
+                        {
+                            "label": "other",
+                            "detail": "other:其他"
+                        }
+                    ]
                 }
             }
         },
